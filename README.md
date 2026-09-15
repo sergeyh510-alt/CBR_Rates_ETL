@@ -124,7 +124,7 @@ The loader and BI should not connect as the same role. `cbr_loader` writes to `r
 
 The project is three layers in one database, with data flowing in one direction.
 
-```mermaid
+```bash
 flowchart LR
     API["cbr.ru<br/>XML_daily.asp"] -->|requests + lxml| PY["Python loader<br/>cbr_rates.py"]
     PY -->|UPSERT| RAW[("raw.cbr_rates")]
@@ -184,8 +184,10 @@ ETL stands for Extract, Transform, Load. In our case there's a fourth step: buil
 </ValCurs>
 ```
 ```
-**Source quirks:**
-
+```
+```
+*****Source quirks:**
+```
 | Quirk | How we handle it |
 |---|---|
 | windows-1251 encoding | `lxml` reads the XML declaration and decodes to Unicode |
@@ -196,11 +198,13 @@ ETL stands for Extract, Transform, Load. In our case there's a fourth step: buil
 
 **Code:**
 
+```bash
 ```python
 def fetch_xml(url: str = URL) -> bytes:
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
     return resp.content
+```
 ```
 
 `resp.content` (bytes), not `resp.text` — so we don't rely on HTTP headers, which have historically been wrong on cbr.ru. `lxml` figures out the encoding from the XML declaration itself.
@@ -254,7 +258,7 @@ def parse_rates(xml_bytes: bytes):
 - `resolve_entities=False` and `no_network=True` — protection against XXE attacks and external entities. CBR's XML is unlikely to be hostile, but it's good hygiene.
 - `Nominal` can be `1`, `100`, or `1000`. For DZD and AMD, for example, it's `100`. This affects the interpretation of `Value` — it's per `Nominal` units, not per one.
 - `VunitRate` is already reduced to "per 1 unit". We use it for dynamics.
-
+```
 ### Load — Storing Data
 
 Raw data lands in `raw.cbr_rates`.
