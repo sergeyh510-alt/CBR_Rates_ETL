@@ -40,7 +40,7 @@ An ETL pipeline that pulls official currency exchange rates from [cbr.ru](https:
 - [Failure Handling](#failure-handling)
 - [Roadmap](#roadmap)
 - [License](#license)
-- [Autor](#Contacts)
+- [Author](#Contacts)
 
 ---
 
