@@ -40,6 +40,7 @@ ETL-пайплайн для ежедневной загрузки официал
 - [Обработка сбоев](#обработка-сбоев)
 - [Roadmap](#roadmap)
 - [Лицензия](#лицензия)
+- [Автор](#Контакты)
 
 ---
 
@@ -1094,3 +1095,8 @@ GROUP BY status;
 ## Лицензия
 
 MIT. См. `LICENSE`.
+### Контакты
+* Email: sergeyh510@gmail.com
+* GitHub: sergeyh510-alt
+* LinkedIn: www.linkedin.com/in/sergey-chekryzhov-a38778217
+* Telegram: @SergeyChekryzhov
