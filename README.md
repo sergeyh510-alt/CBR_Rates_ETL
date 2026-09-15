@@ -40,6 +40,7 @@ An ETL pipeline that pulls official currency exchange rates from [cbr.ru](https:
 - [Failure Handling](#failure-handling)
 - [Roadmap](#roadmap)
 - [License](#license)
+- [Autor](#Contacts)
 
 ---
 
@@ -1323,3 +1324,9 @@ $$;
 COMMENT ON PROCEDURE etl.refresh_dashboard(DATE, INT, DATE)
     IS 'Rebuild dwh.dm_* marts from raw.cbr_rates';
 ```
+
+### Contacts
+* Email: sergeyh510@gmail.com
+* GitHub: sergeyh510-alt
+* LinkedIn: www.linkedin.com/in/sergey-chekryzhov-a38778217
+* Telegram: @SergeyChekryzhov
